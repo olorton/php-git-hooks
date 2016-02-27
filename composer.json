@@ -1,0 +1,19 @@
+{
+  "name": "olorton/php-git-hooks",
+  "description": "An attempt at a better way to run pre-commit hooks",
+  "version": "dev-master",
+  "authors": [
+    {
+      "name": "Oliver Lorton",
+      "email": "oliverlorton@gmail.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": "^5.3.6 || ^7.0",
+    "fabpot/php-cs-fixer": "^1.11"
+  },
+  "bin": [
+    "bin/install-php-git-hooks.sh"
+  ]
+}
