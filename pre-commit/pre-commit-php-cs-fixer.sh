@@ -73,13 +73,14 @@ RETVAL=0
 
 ##########  PHP CS Fixer  ##########
 FIXDATA=`php vendor/fabpot/php-cs-fixer/php-cs-fixer fix $TMP_STAGING --dry-run`
+FIXDATA=${FIXDATA/Checked all files*/}
 if [ "$FIXDATA" != "" ]
 then
   echo "One or more files do not conform to coding standards."
   echo "You can fix them by running the following commands:"
   echo
   echo cd `pwd`
-  echo $FIXDATA | sed 's/Checked all files.*//g' | sed 's/[0-9 ]*[0-9]) /\
+  echo $FIXDATA | sed 's/[0-9 ]*[0-9]) /\
 php vendor\/fabpot\/php-cs-fixer\/php-cs-fixer fix /g'
   echo
   RETVAL=1
